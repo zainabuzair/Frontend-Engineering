@@ -1,0 +1,299 @@
+/* RESET & CSS VARIABLES */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --text-color: #1f2937;
+    --text-muted: #4b5563;
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 12px;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --nav-height: 70px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-main);
+}
+
+/* 1. STICKY RESPONSIVE NAVBAR (FLEXBOX) */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--nav-height);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.navbar a:hover {
+    background-color: #eff6ff;
+    color: var(--primary-color);
+}
+
+/* FULL-PAGE SECTIONS CONTAINER */
+.page-section {
+    min-height: calc(100vh - var(--nav-height));
+    padding: 60px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-content, .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+.hero-content h1, .section-header h2 {
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.hero-content p, .section-header p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+}
+
+/* 2. FLEXBOX CARDS SYSTEM WITH TILT HOVER EFFECT */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    flex: 1 1 300px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* Smooth Transition for Hover Effects */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Right Tilt & Lift on Hover */
+.card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
+}
+
+.card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.card-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* 3. MULTI-COLUMN LAYOUT (CSS GRID) WITH TILT HOVER EFFECT */
+.grid-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.grid-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    
+    /* Smooth Transition for Hover Effects */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Left Tilt & Lift on Hover */
+.grid-card:hover {
+    transform: translateY(-10px) rotate(-2deg);
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
+}
+
+.grid-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.grid-card p {
+    color: var(--text-muted);
+}
+
+/* CONTACT & FORM SECTION */
+.contact-wrapper {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.contact-form {
+    background: var(--bg-card);
+    padding: 32px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background-color: #ffffff;
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 30px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .navbar ul {
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .hero-content h1, .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .page-section {
+        min-height: auto;
+        padding: 40px 20px;
+    }
+}
