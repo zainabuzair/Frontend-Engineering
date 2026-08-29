@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AETHER // Next-Gen Quantum Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main Navigation">
+      <div class="logo">AETHER<span>.IO</span></div>
+      <ul>
+        <li><a href="#hero">Overview</a></li>
+        <li><a href="#metrics">Metrics</a></li>
+        <li><a href="#terminal">Terminal</a></li>
+        <li><a href="#access">Access</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="fullscreen-section">
+      <div class="content-wrapper">
+        <span class="badge">System Online</span>
+        <h1>Quantum Processing <br><span class="gradient-text">Redefined</span></h1>
+        <p>Deploy cloud compute nodes across neural networks with sub-millisecond latency.</p>
+        <div class="cta-group">
+          <a href="#access" class="btn btn-primary">Initialize Node</a>
+          <a href="#metrics" class="btn btn-secondary">System Status</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="metrics" class="fullscreen-section">
+      <div class="content-wrapper">
+        <h2>Live Network Telemetry</h2>
+        <div class="grid-container">
+          <article class="card">
+            <h3>Neural Core Alpha</h3>
+            <p class="metric">99.98%</p>
+            <p class="subtext">Efficiency Rating</p>
+          </article>
+          <article class="card">
+            <h3>Latency Vector</h3>
+            <p class="metric">0.12 ms</p>
+            <p class="subtext">Global Average</p>
+          </article>
+          <article class="card">
+            <h3>Active Threads</h3>
+            <p class="metric">4,096</p>
+            <p class="subtext">Quantum Strings</p>
+          </article>
+          <article class="card">
+            <h3>Thermal Matrix</h3>
+            <p class="metric">12 K</p>
+            <p class="subtext">Cryo-Cooled</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="terminal" class="fullscreen-section">
+      <div class="content-wrapper">
+        <h2>Command Architecture</h2>
+        <div class="flex-container">
+          <div class="flex-item flex-text">
+            <h3>Automated Neural Deployment</h3>
+            <p>Spin up quantum containers instantly using our custom CLI or REST API interfaces. Designed for continuous uptime and automated scale-outs.</p>
+          </div>
+          <div class="flex-item flex-code">
+            <pre><code>$ aether connect --node=us-east-q1
+> Handshake initialized...
+> Quantum key exchange complete.
+> Connection secure: 1024-qubit encryption.</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="fullscreen-section">
+      <div class="content-wrapper">
+        <h2>Request Access</h2>
+        <form class="futuristic-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="username">Developer Identifier</label>
+            <input type="text" id="username" name="username" placeholder="e.g. alex_v" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Quantum Encrypted Email</label>
+            <input type="email" id="email" name="email" placeholder="dev@network.io" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="tier">Node Tier</label>
+            <select id="tier" name="tier" required>
+              <option value="sandbox">Sandbox (Single Qubit)</option>
+              <option value="cluster">Cluster (Multi-Threaded)</option>
+              <option value="enterprise">Enterprise (Dedicated Array)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Transmit Request</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AETHER Systems Inc. | All Quantum Threads Reserved.</p>
+  </footer>
+
+  </body>
+</html>
