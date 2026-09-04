@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Task Tracker & Advice Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Task Tracker</h1>
+      <div class="api-card">
+        <h3>Daily Motivation (API)</h3>
+        <p id="advice-text">Click below to fetch advice...</p>
+        <button id="fetch-advice-btn">Get Advice</button>
+      </div>
+    </header>
+
+    <section class="form-section">
+      <form id="task-form">
+        <div class="input-group">
+          <input type="text" id="task-input" placeholder="Enter a new task...">
+          <small id="error-message" class="error"></small>
+        </div>
+        <button type="submit" id="add-btn">Add Task</button>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <h2>Your Tasks</h2>
+      <ul id="task-list"></ul>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

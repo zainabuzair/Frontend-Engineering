@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 2 Revision</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-container">
+      <h1>Task & Data Dashboard</h1>
+      <button id="open-modal-btn" class="btn btn-primary">+ Add New Task</button>
+    </div>
+  </header>
+
+  <main class="container app-main">
+    <!-- Local Storage Task Management Section -->
+    <section class="card-section">
+      <div class="section-header">
+        <h2>Local Storage Tasks</h2>
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="pending">Pending</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+      </div>
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+
+    <!-- External API Integration Section -->
+    <section class="card-section">
+      <div class="section-header">
+        <h2>External Users (Fetch API & Async/Await)</h2>
+        <button id="fetch-users-btn" class="btn btn-secondary">Load Users</button>
+      </div>
+      <div id="api-status" class="status-message"></div>
+      <div id="user-grid" class="user-grid"></div>
+    </section>
+  </main>
+
+  <!-- Task Modal Form -->
+  <div id="task-modal" class="modal-backdrop hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Create Task</h3>
+        <button id="close-modal-btn" class="close-btn">&times;</button>
+      </div>
+      <form id="task-form" novalidate>
+        <div class="form-group">
+          <label for="task-title">Title *</label>
+          <input type="text" id="task-title" name="title" required placeholder="Enter task title...">
+          <span class="error-msg" id="title-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="task-category">Category</label>
+          <select id="task-category" name="category">
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Study">Study</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="cancel-btn" class="btn btn-tertiary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
